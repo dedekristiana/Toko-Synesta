@@ -1,8 +1,17 @@
+import { useState } from "react";
 import "./App.css";
 import Navbar from "./Components/Nav";
 import Category from "./Components/Category";
 
 function App() {
+  const [open, setOpen] = useState(0);
+
+  if (open === 5) {
+    alert("lima");
+  } else {
+    alert("bukan lima");
+  }
+
   return (
     <div className="bg-gradient-to-r from-slate-50 to-slate-100">
       <div className="container mx-auto text-slate-600 pb-20">
@@ -24,6 +33,14 @@ function App() {
           <h2 className="pt-5 group-hover:text-white font-bold text-2xl">
             PS 3
           </h2>
+        </div>
+        <div className="flex justify-center">
+          <button
+            className="bg-slate-600 p-3 text-white rounded-lg"
+            onClick={() => setOpen(open + 1)}
+          >
+            klik disini
+          </button>
         </div>
       </div>
     </div>
